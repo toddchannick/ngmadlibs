@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
 	<meta charset="UTF-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="angular.min.js.map"></script>
+	<script src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>ngMadLibs</title>
 </head>
-<body ng-app="">
+<body ng-controller="myController.template">
 	<div id="wrapper">
 		<header>
 			<div id="head-left">
@@ -23,7 +25,7 @@
 				<span id="words-title">Provide the following words:</span>
 				<div id="choices">
 					<div class="column">
-						<input type="text" class="box" placeholder="male name" ng-model="maleName" />
+						<input type="text" class="box" placeholder="male name" ng-model="template.male_name" />
 						<input type="text" class="box" placeholder="job title"  ng-model="job_title" />
 						<input type="text" class="box" placeholder="tedious task" ng-model="tedious_task" />
 					</div>
@@ -44,7 +46,7 @@
 		<section class="result-section">
 			<div id="result-text">
 				<p id="result">
-					{{maleName}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated  {{tedious_task}} and {{dirty task}}. So, {{male_name}} met with his life mentor, {{celebrity}}, who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead. What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster. 
+					{{template.male_name}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated  {{tedious_task}} and {{dirty_task}}. So, {{male_name}} met with his life mentor, {{celebrity}}, who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead. What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster. 
 				</p>
 			</div>
 		</section>
