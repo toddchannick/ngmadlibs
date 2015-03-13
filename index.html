@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script src="angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>ngMadLibs</title>
+</head>
+<body ng-app="">
+	<div id="wrapper">
+		<header>
+			<div id="head-left">
+				<div id="smiley"></div>
+			</div>
+			<div id="head-right">
+				<div id="logo"></div>
+				<div id="header-text"><span>Automate This!</span></div>
+			</div>
+		</header>
+
+		<section class="words-section">
+			<div id="words">
+				<span id="words-title">Provide the following words:</span>
+				<div id="choices">
+					<div class="column">
+						<input type="text" class="box" placeholder="male name" ng-model="maleName" />
+						<input type="text" class="box" placeholder="job title"  ng-model="job_title" />
+						<input type="text" class="box" placeholder="tedious task" ng-model="tedious_task" />
+					</div>
+					<div class="column">
+						<input type="text" class="box" placeholder="dirty task" ng-model="dirty_task" />
+						<input type="text" class="box" placeholder="celebrity" ng-model="celebrity" />
+						<input type="text" class="box" placeholder="useless skill" ng-model="useless_skill" />
+					</div>
+					<div class="column">
+						<input type="text" class="box" placeholder="obnoxious celebrity" ng-model="obnoxious_celebrity" />
+						<input type="text" class="box" placeholder="huge number" ng-model="huge_number" />
+						<input type="text" class="box" placeholder="adjective" ng-model="adjective" />
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="result-section">
+			<div id="result-text">
+				<p id="result">
+					{{maleName}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated  {{tedious_task}} and {{dirty task}}. So, {{male_name}} met with his life mentor, {{celebrity}}, who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead. What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster. 
+				</p>
+			</div>
+		</section>
+	</div>
+
+</body>
+</html>
