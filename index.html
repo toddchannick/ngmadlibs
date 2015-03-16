@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<script src="angular.min.js"></script>
+	<script src="angular.animate.min.js"></script>
 	<script src="angular.min.js.map"></script>
 	<script src="app.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css">
@@ -12,7 +13,7 @@
 	<div id="wrapper">
 		<header>
 			<div id="head-left">
-				<div id="smiley"></div>
+				<div id="smiley" ng-click="reset()"></div>
 			</div>
 			<div id="head-right">
 				<div id="logo"></div>
@@ -22,10 +23,13 @@
 
 		<section class="words-section">
 			<div id="words">
-				<span id="words-title">Provide the following words:</span>
-				<div id="choices">
+				<p><span id="gender">Are you <a ng-click="changeGender('m')" class = "selection" ng-class="gender == 'm' ? 'active' : '' ">Male</a> or <a ng-click="changeGender('f')" class = "selection" ng-class="gender == 'f' ? 'active' : '' ">Female?</a></span></p>
+				<br>
+				<p><span id="words-title">Provide the following words:</span></p>
+			
+				<form name="form" id="choices">
 					<div class="column">
-						<input type="text" class="box" placeholder="male name" ng-model="template.male_name" />
+						<input type="text" class="box" placeholder="your name" ng-model="template.name" />
 						<input type="text" class="box" placeholder="job title"  ng-model="template.job_title" />
 						<input type="text" class="box" placeholder="tedious task" ng-model="template.tedious_task" />
 					</div>
@@ -39,14 +43,20 @@
 						<input type="text" class="box" placeholder="huge number" ng-model="template.huge_number" />
 						<input type="text" class="box" placeholder="adjective" ng-model="template.adjective" />
 					</div>
-				</div>
+				</form>
+				<div class="lower-bar">
+					<div class="button generate grow" ng-click="results=true">Generate my Mad Lib!</div>
+					<div class="button reset grow" ng-click="reset(); results=false" value="Reset">Reset</button>
+				</div>		
 			</div>
 		</section>
+		
+		
 
-		<section class="result-section">
+		<section class="result-section" ng-show="results" ng-animate="'animate'">
 			<div id="result-text">
 				<p id="result">
-					{{template.male_name}} was a {{template.job_title}} who loved technology. Although he loved parts of his job, he absolutely hated  {{template.tedious_task}} and {{template.dirty_task}}. So, {{template.male_name}} met with his life mentor, {{template.celebrity}}, who told him to learn how to {{template.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{template.useless_skill}} so he studied programming instead. What a great decision! With his new skills, {{template.male_name}} built a(n) {{adjective}} robot named {{template.obnoxious_celebrity}} that not only loved {{template.dirty_task}} but did it {{template.huge_number}} faster. 
+					{{template.name}} was a {{template.job_title}} who loved technology. Although {{gender=='m' ? 'he' : 'she'}} loved parts of {{gender=='m' ? 'his' : 'her'}} job, {{gender=='m' ? 'he' : 'she'}} absolutely hated  {{template.tedious_task}} and {{template.dirty_task}}. So, {{template.male_name}} met with {{gender=='m' ? 'his' : 'her'}} life mentor, {{template.celebrity}}, who told {{gender=='m' ? 'him' : 'her'}} to learn how to {{template.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{template.useless_skill}} so {{gender=='m' ? 'he' : 'she'}} studied programming instead. What a great decision! With {{gender=='m' ? 'his' : 'her'}} new skills, {{template.name}} built a(n) {{adjective}} robot named {{template.obnoxious_celebrity}} that not only loved {{template.dirty_task}} but did it {{template.huge_number}} times faster. 
 				</p>
 			</div>
 		</section>

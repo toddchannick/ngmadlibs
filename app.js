@@ -1,8 +1,8 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngAnimate'])
 
 .controller('myController', function($scope) {
     $scope.template = [{
-        male_name: 'male name',
+        name: 'your name',
         job_title: 'job title',
         tedious_task: 'tedious task',
         dirty_task: 'dirty task',
@@ -12,4 +12,19 @@ angular.module('myApp', [])
         huge_number: 'huge number',
         adjective: 'adjective'
     }];
+
+    $scope.gender = '';
+
+    $scope.maleActive = false;
+    $scope.femaleActive = false;
+
+    $scope.changeGender = function(gender){
+        $scope.gender = gender;
+    };
+
+    $scope.reset = function(){
+        $scope.template=[]
+    }
+
+
 });
