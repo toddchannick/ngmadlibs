@@ -23,29 +23,31 @@
 
 		<section class="words-section">
 			<div id="words">
-				<p><span id="gender">Are you <a ng-click="changeGender('m')" class = "selection" ng-class="gender == 'm' ? 'active' : '' ">Male</a> or <a ng-click="changeGender('f')" class = "selection" ng-class="gender == 'f' ? 'active' : '' ">Female?</a></span></p>
+				<p><span id="gender">Are you <a ng-click="changeGender('m')" class = "selection" ng-class="gender == 'm' ? 'active' : '' ">MALE</a> or <a ng-click="changeGender('f')" class = "selection" ng-class="gender == 'f' ? 'active' : '' ">FEMALE?</a></span></p>
 				<br>
 				<p><span id="words-title">Provide the following words:</span></p>
 			
-				<form name="form" id="choices">
+				<form name="form" id="choices" ng-submit="results=true">
 					<div class="column">
-						<input type="text" class="box" placeholder="your name" ng-model="template.name" />
-						<input type="text" class="box" placeholder="job title"  ng-model="template.job_title" />
+						<input type="text" class="box" placeholder="your name" ng-model="template.name" required/>
+						<input type="text" class="box" placeholder="job title"  ng-model="template.job_title" required/>
 						<input type="text" class="box" placeholder="tedious task" ng-model="template.tedious_task" />
 					</div>
 					<div class="column">
-						<input type="text" class="box" placeholder="dirty task" ng-model="template.dirty_task" />
-						<input type="text" class="box" placeholder="celebrity" ng-model="template.celebrity" />
-						<input type="text" class="box" placeholder="useless skill" ng-model="template.useless_skill" />
+						<input type="text" class="box" placeholder="dirty task" ng-model="template.dirty_task" required/>
+						<input type="text" class="box" placeholder="celebrity" ng-model="template.celebrity" required/>
+						<input type="text" class="box" placeholder="useless skill" ng-model="template.useless_skill" required/>
 					</div>
 					<div class="column">
-						<input type="text" class="box" placeholder="obnoxious celebrity" ng-model="template.obnoxious_celebrity" />
-						<input type="text" class="box" placeholder="huge number" ng-model="template.huge_number" />
-						<input type="text" class="box" placeholder="adjective" ng-model="template.adjective" />
+						<input type="text" class="box" placeholder="obnoxious celebrity" ng-model="template.obnoxious_celebrity" required/>
+						<input type="number" class="box" placeholder="huge number" ng-model="template.huge_number" required/>
+						<input type="text" class="box" placeholder="adjective" ng-model="template.adjective" required/>
 					</div>
-				</form>
+				
 				<div class="lower-bar">
-					<div class="button generate grow" ng-click="results=true">Generate my Mad Lib!</div>
+					<button type="submit" class="button generate grow">Generate my Mad Lib!</button>
+				</form>
+
 					<div class="button reset grow" ng-click="reset(); results=false" value="Reset">Reset</button>
 				</div>		
 			</div>
