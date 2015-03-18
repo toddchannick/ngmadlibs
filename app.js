@@ -23,7 +23,8 @@ angular.module('myApp', ['ngAnimate'])
     };
 
     $scope.reset = function(){
-        $scope.template=[]
+        $scope.template=[];
+        $scope.gender='';
     }
 
 
