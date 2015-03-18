@@ -297,6 +297,11 @@ button
     padding     : 0px;
 }
 
+button:focus {
+	border:none;
+	outline:none;
+}
+
 
 #result-text {
 	width:92%;
