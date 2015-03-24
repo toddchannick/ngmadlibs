@@ -215,18 +215,6 @@ header {
 	height:25em;
 }
 
-.result-section {
-	position:relative;
-	width:75%;
-	margin-left:auto;
-	margin-right:auto;
-	margin-top:6em;
-	margin-bottom:1.5em;
-	min-height:18em;
-	overflow:auto;
-	background-color:#8C3434;
-	border:.3em solid black;
-}
 
 #choices {
 	position:relative;
@@ -303,18 +291,6 @@ button:focus {
 }
 
 
-#result-text {
-	width:92%;
-	position:relative;
-	margin-left:auto;
-	margin-right:auto;
-	margin-bottom:1em;
-	top:1em;
-	line-height:200%;
-	font-size:95%;
-
-}
-
 #result {
 	color:white;
 }
@@ -334,15 +310,37 @@ button:focus {
   transform: scale(1.1);
 }
 
-
-.item-animate.ng-hide {
-  height:0;
-  opacity:0;
-  padding:0;
+.result-section {
+	position:relative;
+	width:75%;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:6em;
+	margin-bottom:1.5em;
+	padding:1em;
+	overflow:auto;
+	background-color:#8C3434;
+	border:.3em solid black;
+	-webkit-transition:.5s linear all;
+	transition:.5s linear all;
 }
 
-.item-animate.ng-hide-remove,
-.item-animate.ng-hide-add {
-  display: block !important;
-  transition: all linear 300ms;
+
+.result-text {
+	width:92%;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	line-height:200%;
+	font-size:95%;
+}
+
+.result-section.ng-enter,
+.result-section.ng-leave.ng-leave-active {
+  opacity:1;
+}
+
+.result-section.ng-hide, 
+.result-section.ng-leave.ng-leave-active {
+  opacity:0;
 }
